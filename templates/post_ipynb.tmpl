@@ -32,16 +32,22 @@
 
     % if needs_ipython_css:
     <div>
-    <script>
-code_show=true; 
+<script>
+if (typeof code_show == 'undefined') {
+    code_show = true
+    } else {
+    code_show = false
+    }
 function code_toggle() {
- if (code_show){
+        
+
+ if (!code_show){
  $('div.input').hide();
  } else {
  $('div.input').show();
  }
  code_show = !code_show
-} 
+}
 $( document ).ready(code_toggle);
 </script>
 <form action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form>
