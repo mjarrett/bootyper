@@ -24,6 +24,9 @@
     ${helper.twitter_card_information(post)}
     ${helper.meta_translations(post)}
     ${math.math_styles_ifpost(post)}
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="/assets/js/bootyper.js"></script>    
 </%block>
 
 <%block name="content">
@@ -32,26 +35,51 @@
 
     % if needs_ipython_css:
     <div>
-<script>
-if (typeof code_show == 'undefined') {
-    code_show = true
-    } else {
-    code_show = false
-    }
-function code_toggle() {
-        
 
- if (!code_show){
- $('div.input').hide();
- $('div.prompt.output_prompt').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-}
+
+
+<script>
+
+//console.log(code_show);
+//
+//if (typeof code_show == 'undefined') {
+//    code_show = true
+//  } else {
+//    code_show = false
+//    }
+//
+//console.log(code_show);
+
+
+//function code_toggle() {
+//    console.log('code_toggle');
+//    console.log(code_show);	
+//
+// if (!code_show){
+// $('div.input').hide();
+// $('div.prompt.output_prompt').hide();
+// } else {
+// $('div.input').show();
+// }
+// code_show = !code_show
+//}
+$( document ).ready(toggle_setup);
 $( document ).ready(code_toggle);
+
+// if the image in the window of browser when the page is loaded, show that image (fade in)
+$(document).ready(function(){
+        showImages('article img');
+});
+
+// if the image in the window of browser when scrolling the page, show that image
+$(window).scroll(function() {
+        showImages('article img');
+});
 </script>
-<form action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form>
+
+
+</script>
+<form id="toggle-button" action="javascript:code_toggle()"><input type="submit" class="btn btn-primary" value="Click here to toggle on/off the raw code."></form>
     </div>
     % endif
     

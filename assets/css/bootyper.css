@@ -1,8 +1,36 @@
 /* Override nikola_ipython.css */
 div.prompt {
-  background-color: #FFFFFF;
+    
+    display: none;
 }
 
 div.input {
   border: none;
+}
+
+
+/* set a max-width for horizontal fluid layout and make it centered */
+.body-content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 750px; /* or 950px */
+}
+
+
+/* For fading in images https://stackoverflow.com/questions/27747970/how-to-make-images-fade-visible-when-im-scrolling*/
+
+article img {
+   visibility: hidden; 
+}
+
+.fadeIn {
+        -webkit-animation: animat_show 0.8s;
+        animation: animat_show 0.8s;
+        visibility: visible !important;
+}
+
+@-webkit-keyframes animat_show{
+        0%{opacity:0}
+        100%{opacity:1}
+    
 }
