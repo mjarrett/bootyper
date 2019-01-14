@@ -11,6 +11,10 @@ This theme makes two improvements to the default theme:
 ![Invisible code cells](code_off.png)
 
 
+The initial setting of code cell visibility is set by the metadata field "code". Set to "true" or "false". If unset, code will be shown on page load.
+
+
+
 # Usage
 
 Clone or download this repository and place it in the /themes/ directory in your Nikola installation.

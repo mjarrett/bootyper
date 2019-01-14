@@ -63,6 +63,13 @@
 // }
 // code_show = !code_show
 //}
+
+% if code == "False":
+     code_show = false;
+% else:
+     code_show = true;
+% endif
+console.log(code_show)
 $( document ).ready(toggle_setup);
 $( document ).ready(code_toggle);
 
