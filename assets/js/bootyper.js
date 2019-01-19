@@ -1,4 +1,3 @@
-console.log(code_show);
 
 function toggle_setup() {
 if (typeof code_show == 'undefined') {
